@@ -27,12 +27,12 @@ end
 
     if @place.user !=current_user
       return render plain: 'Not Allowed', status: :forbidden
+    end
   end
 
   def update
   @place = Place.find(params[:id])
   if @place.user != current_user
-    return render plain: 'Not Allowed', status: :forbidden
   end
 
   @place.update_attributes(place_params)
@@ -49,11 +49,11 @@ end
     return render plain: 'Not Allowed', status: :forbidden
   end
 
-    private
-
     @place.destroy
     redirect_to root_path
   end
+
+  private
 
   def place_params
     params.require(:place).permit(:name, :description, :address)
