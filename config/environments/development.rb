@@ -10,7 +10,7 @@ Rails.application.configure do
     #  enable_starttls_auto: true,
     #  user_name: ENV['GMAIL_ADDRESS'],
     #  password: ENV['GMAIL_PASSWORD']
-  }
+  # }
 
 
   config.action_mailer.delivery_method = :test
