@@ -2,13 +2,17 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @photo = Photo.find(params[:place_id])
-    @place.photos.create(photo_params)
+    @photo = Place.find(params[:place_id])
+    uploader = ImageUploader.new
+    uploader.store!(params[:photo])
+
+  end
+
+  def photo_params
+    params.require(:photo).permit(:caption)
   end
 
    private
 
-  def comment_params
-    params.require(:caption)
-  end
+  
 end

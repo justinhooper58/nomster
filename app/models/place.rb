@@ -8,7 +8,7 @@ class Place < ApplicationRecord
   after_validation :geocode
 
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :photo, ImageUploader
 
   
   validates :name, presence: true, length: { minimum: 3, too_long: "3 characters is the minimum allowed"}
