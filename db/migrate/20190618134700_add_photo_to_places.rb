@@ -1,5 +1,5 @@
 class AddPhotoToPlaces < ActiveRecord::Migration[5.2]
   def change
-    add_column :photos, :photo, :string
+    add_column :photos, :picture, :string
   end
 end
