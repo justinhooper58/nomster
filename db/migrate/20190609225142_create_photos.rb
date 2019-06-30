@@ -1,14 +1,14 @@
 class CreatePhotos < ActiveRecord::Migration[5.2]
-  def up
+  def create
     create_table :photos do |t|
       t.string :caption
       t.integer :place_id
       t.timestamps
+      t.integer :user_id
     end
 
-   add_index :photos, [:place_id]
-  end
-  def down
-    drop_table :photos
-  end
+    add_index :photos, [:user_id, :place_id]
+
+     end
+  
 end
